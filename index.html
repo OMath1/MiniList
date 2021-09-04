@@ -1,0 +1,66 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mini List</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="title">Mini List</h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="container">
+        <form id="form">
+          <div>
+            <label for="quantidade">Quantidade:</label>
+            <input
+              id="quantidade"
+              name="quantidade"
+              type="text"
+              placeholder="Insira a quantidade"
+              required
+            />
+          </div>
+          <div>
+            <label for="item">Item:</label>
+            <input
+              id="item"
+              name="item"
+              type="text"
+              placeholder="Insira seu item"
+              required
+            />
+            <br />
+            <button id="btn-add" class="button">Enviar</button>
+            <br />
+            <ul id="error-msg"></ul>
+          </div>
+        </form>
+        <h2>Sua Lista De Compras</h2>
+
+        <div class="div-list">
+          <table>
+            <thead>
+              <tr>
+                <th>Quantidade</th>
+                <th>Item</th>
+              </tr>
+            </thead>
+            <tbody id="item-table"></tbody>
+          </table>
+        </div>
+
+      <div id="warning-div">
+        <p class="warning">Insira a quantidade e os itens para aparecer a tabela</p>
+      </div>
+      </section>
+    </main>
+    <script src="js/warning.js"></script>
+    <script src="js/button.js"></script>
+  </body>
+</html>
