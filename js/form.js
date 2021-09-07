@@ -1,14 +1,14 @@
-var button = document.querySelector("#btn-add");
+const button = document.querySelector("#btn-add");
 
 button.addEventListener("click", function (event) {
   event.preventDefault();
 
-  var form = document.querySelector("#form");
-  var item = getItem(form);
+  const form = document.querySelector("#form");
+  const item = createItem(form);
 
   // add itens on table
 
-  var errors = checkItem(item);
+  const errors = checkItem(item);
 
   if (errors.length > 0) {
     showErrorsMsg(errors);
@@ -22,10 +22,24 @@ button.addEventListener("click", function (event) {
   form.reset();
 });
 
-function addItemOntable(item) {
-  let itemTr = makeTr(item);
-  let table = document.querySelector("#item-table");
-  table.appendChild(itemTr);
+function createItem(form) {
+  let item = {
+    quantidade: form.quantidade.value,
+    item: form.item.value,
+  };
+  return item;
+}
+
+function checkItem(item) {
+  let errors = [];
+  if (item.quantidade.length == 0) {
+    errors.push("quantidade não pode ficar em branco");
+  }
+  if (item.item.length == 0) {
+    errors.push("Item não pode ficar em branco");
+  }
+
+  return errors;
 }
 
 function showErrorsMsg(errors) {
@@ -39,12 +53,10 @@ function showErrorsMsg(errors) {
   });
 }
 
-function getItem(form) {
-  let item = {
-    quantidade: form.quantidade.value,
-    item: form.item.value,
-  };
-  return item;
+function addItemOntable(item) {
+  let itemTr = makeTr(item);
+  let table = document.querySelector("#item-table");
+  table.appendChild(itemTr);
 }
 
 function makeTr(item) {
@@ -63,17 +75,4 @@ function makeTd(data, classe) {
   td.classList.add(classe);
 
   return td;
-}
-
-function checkItem(item) {
-  let errors = [];
-
-  if (item.quantidade.length == 0) {
-    errors.push("A quantidade não pode ficar em branco");
-  }
-  if (item.item.length == 0) {
-    errors.push("Item não pode ficar em branco");
-  }
-
-  return errors;
 }

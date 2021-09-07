@@ -41,9 +41,9 @@
             <ul id="error-msg"></ul>
           </div>
         </form>
-        <h2>Sua Lista De Compras</h2>
-
-        <div class="div-list">
+        <h2 id="h2" >Sua Lista De Compras</h2>
+        
+        <div id="table" class="div-list">
           <table>
             <thead>
               <tr>
@@ -51,16 +51,22 @@
                 <th>Item</th>
               </tr>
             </thead>
-            <tbody id="item-table"></tbody>
+            <tbody id="item-table">
+              <tr class="item">
+                <td class="info-quantidade">teste</td>
+                <td class="info-item">teste</td>
+              </tr>
+            </tbody>
           </table>
         </div>
 
-      <div id="warning-div">
-        <p class="warning">Insira a quantidade e os itens para aparecer a tabela</p>
+      <div class="warning-div" id="warning-div">
+        <p id="pWarning" class="warning">Insira a quantidade e os itens para aparecer sua lista de compras</p>
       </div>
       </section>
     </main>
     <script src="js/warning.js"></script>
-    <script src="js/button.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/remove-item.js"></script>
   </body>
 </html>

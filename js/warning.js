@@ -1,8 +1,10 @@
-const item = document.querySelector("#item-table")
+const table = document.getElementById("item-table").rows.length;
 
-var warning = document.querySelector("#warning-div") 
-
-
-// esconder a tabela caso nao tenha itens 
-
-// fazer aparecer o warning caso a tabela esteja escondida
+if (table == 0) {
+  // faz a tbody sumir e faz o p desejado aparecer
+  document.getElementById("table").style.display = "none";
+}
+if (table >= 1) {
+  document.getElementById("table").style.display = "block";
+  document.getElementById("warning-div").style.display = "none";
+}
